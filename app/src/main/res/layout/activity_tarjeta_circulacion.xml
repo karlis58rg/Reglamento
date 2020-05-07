@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".TarjetaCirculacion">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/imgHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@drawable/header"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtTituloEmpresarial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Infra Mov"
+                    android:textColor="#FFFFFF"
+                    android:textSize="50sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgHeader"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/imgHeader"
+                    app:layout_constraintTop_toTopOf="@+id/imgHeader" />
+
+                <TextView
+                    android:id="@+id/lblTitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Tarjeta de Circulación"
+                    android:textSize="20dp"
+                    app:layout_constraintTop_toBottomOf="@+id/imgHeader"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/lblNombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="35dp"
+                    android:text="Nombre:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblTitulo" />
+                <TextView
+                    android:id="@+id/lblApaterno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="23dp"
+                    android:text="Apaterno:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblNombre" />
+
+                <TextView
+                    android:id="@+id/lblAmaterno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Amaterno:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblApaterno" />
+
+                <TextView
+                    android:id="@+id/lblPlaca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Placa:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblAmaterno" />
+
+                <TextView
+                    android:id="@+id/lblNoSerie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"
+                    android:text="No. Serie:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblPlaca" />
+
+                <TextView
+                    android:id="@+id/lblNoMotor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"
+                    android:text="No. Motor:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblNoSerie" />
+
+                <TextView
+                    android:id="@+id/lblTipoServicio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Tipo Servicio:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblNoMotor" />
+
+                <TextView
+                    android:id="@+id/lblMarca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Marca:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblTipoServicio" />
+
+                <TextView
+                    android:id="@+id/lblSubMarca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"
+                    android:text="SubMarca:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblMarca" />
+                <TextView
+                    android:id="@+id/lblModelo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Modelo:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblSubMarca" />
+
+                <TextView
+                    android:id="@+id/lblColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Color:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblModelo" />
+
+                <TextView
+                    android:id="@+id/lblObservacionesTC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Observaciones:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblColor" />
+
+                <EditText
+                    android:id="@+id/txtNombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:hint="Nombre"
+                    android:inputType="textPersonName"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/lblNombre"
+                    app:layout_constraintTop_toBottomOf="@+id/lblTitulo"
+                    android:drawableLeft="@drawable/user"/>
+
+                <EditText
+                    android:id="@+id/txtApaterno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="43dp"
+                    android:layout_marginLeft="43dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="Apaterno"
+                    android:inputType="textPersonName"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/lblApaterno"
+                    app:layout_constraintTop_toBottomOf="@+id/txtNombre"
+                    android:drawableLeft="@drawable/user"/>
+
+                <EditText
+                    android:id="@+id/txtAmaterno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="39dp"
+                    android:layout_marginLeft="39dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="Amatermo"
+                    android:inputType="textPersonName"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/lblAmaterno"
+                    app:layout_constraintTop_toBottomOf="@+id/txtApaterno"
+                    android:drawableLeft="@drawable/user"/>
+
+                <EditText
+                    android:id="@+id/txtPlaca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="67dp"
+                    android:layout_marginLeft="67dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="Placa"
+                    android:inputType="textPersonName"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/lblPlaca"
+                    app:layout_constraintTop_toBottomOf="@+id/txtAmaterno"
+                    android:drawableLeft="@drawable/numbers"/>
+
+                <EditText
+                    android:id="@+id/txtNoSerie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="No. de Serie"
+                    android:inputType="textPersonName"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/lblNoSerie"
+                    app:layout_constraintTop_toBottomOf="@+id/txtPlaca"
+                    android:drawableLeft="@drawable/numbers"/>
+
+                <EditText
+                    android:id="@+id/txtNoMotor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="37dp"
+                    android:layout_marginLeft="37dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="No. de Motor"
+                    android:inputType="textPersonName"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/lblNoMotor"
+                    app:layout_constraintTop_toBottomOf="@+id/txtNoSerie"
+                    android:drawableLeft="@drawable/numbers"/>
+
+
+                <Spinner
+                    android:id="@+id/spinTipoServicio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/lblTipoServicio"
+                    app:layout_constraintTop_toBottomOf="@+id/txtNoMotor"
+                    android:entries="@array/arrayTipoServicio"/>
+
+                <Spinner
+                    android:id="@+id/spinMarca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="62dp"
+                    android:layout_marginLeft="62dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:entries="@array/arrayMarca"
+                    android:inputType="textPersonName"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/lblMarca"
+                    app:layout_constraintTop_toBottomOf="@+id/spinTipoServicio" />
+
+                <Spinner
+                    android:id="@+id/spinSubMarca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginLeft="38dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/lblSubMarca"
+                    app:layout_constraintTop_toBottomOf="@+id/spinMarca"
+                    android:entries="@array/arraySubMarca"/>
+
+                <Spinner
+                    android:id="@+id/spinModelo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="54dp"
+                    android:layout_marginLeft="54dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/lblModelo"
+                    app:layout_constraintTop_toBottomOf="@+id/spinSubMarca"
+                    android:entries="@array/arrayModelo"/>
+
+                <Spinner
+                    android:id="@+id/spinColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="68dp"
+                    android:layout_marginLeft="68dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/lblColor"
+                    app:layout_constraintTop_toBottomOf="@+id/spinModelo"
+                    android:entries="@array/arrayColor"/>
+
+                <EditText
+                    android:id="@+id/txtObservacionesTC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="85dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="Observaciones"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/lblObservacionesTC"
+                    app:layout_constraintTop_toBottomOf="@+id/spinColor" />
+
+                <Button
+                    android:id="@+id/btnQr"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="70dp"
+                    android:background="@drawable/qr"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblObservacionesTC"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:id="@+id/lblResult"
+                    android:layout_width="188dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:inputType="textMultiLine"
+                    android:text="INFORMACIÓN"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.150"
+                    app:layout_constraintStart_toEndOf="@+id/btnQr"
+                    app:layout_constraintTop_toBottomOf="@+id/txtObservacionesTC" />
+
+                <Button
+                    android:id="@+id/btnOpenInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Consultar Información"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.150"
+                    app:layout_constraintStart_toEndOf="@+id/btnQr"
+                    app:layout_constraintTop_toBottomOf="@+id/lblResult"
+                    android:background="@drawable/boton_redondo"
+                    android:textColor="@color/background"/>
+
+                <Button
+                    android:id="@+id/btnSiguienteTC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp"
+                    android:text="Continuar"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnOpenInfo"
+                    android:background="@drawable/boton_redondo"
+                    android:textColor="@color/background"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

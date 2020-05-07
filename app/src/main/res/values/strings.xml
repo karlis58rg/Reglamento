@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Reglamento</string>
+
+    <string-array name="arrayTipoServicio">
+        <item>--Selecciona--</item>
+        <item>Transporte Privado</item>
+        <item>Transporte Publico</item>
+    </string-array>
+
+    <string-array name="arrayMarca">
+        <item>--Selecciona--</item>
+        <item>Ford Motor Company</item>
+    </string-array>
+
+    <string-array name="arraySubMarca">
+        <item>--Selecciona--</item>
+        <item>Mondeo 4ptas</item>
+    </string-array>
+
+    <string-array name="arrayModelo">
+        <item>--Selecciona--</item>
+        <item>2007</item>
+    </string-array>
+
+    <string-array name="arrayColor">
+        <item>--Selecciona--</item>
+        <item>Azul</item>
+    </string-array>
+
+    <string-array name="arraySangre">
+        <item>--Selecciona--</item>
+        <item>O+</item>
+        <item>O-</item>
+    </string-array>
+
+    <string-array name="arrayClase">
+        <item>--Selecciona--</item>
+        <item>A</item>
+        <item>B</item>
+    </string-array>
+
+    <string-array name="arrayArticulo">
+        <item>--Selecciona--</item>
+        <item>ARTÍCULO 21</item>
+    </string-array>
+
+    <string-array name="arrayFraccion">
+        <item>--Selecciona--</item>
+        <item>III</item>
+    </string-array>
+
+    <string-array name="arrayInciso">
+        <item>--Selecciona--</item>
+        <item>L</item>
+    </string-array>
+
+    <string-array name="arrayApartado">
+        <item>--Selecciona--</item>
+        <item>A1</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".LicenciaConducir">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/imgHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@drawable/header"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtTituloEmpresarial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Infra Mov"
+                    android:textColor="#FFFFFF"
+                    android:textSize="50sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgHeader"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/imgHeader"
+                    app:layout_constraintTop_toTopOf="@+id/imgHeader" />
+
+                <TextView
+                    android:id="@+id/lblTitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Licencia de Conducir"
+                    android:textSize="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgHeader"/>
+
+                <TextView
+                    android:id="@+id/lblNombreLC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="35dp"
+                    android:text="Nombre:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblTitulo" />
+                <TextView
+                    android:id="@+id/lblApaternoLC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="23dp"
+                    android:text="Apaterno:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblNombreLC" />
+
+                <TextView
+                    android:id="@+id/lblAmaternoLC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Amaterno:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblApaternoLC" />
+
+                <TextView
+                    android:id="@+id/lblFechaNacimiento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Fecha Nacimiento:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblAmaternoLC" />
+
+                <TextView
+                    android:id="@+id/lblDireccion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Dirección:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblFechaNacimiento" />
+                <TextView
+                    android:id="@+id/lblNacionalidad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="80dp"
+                    android:text="Nacionalidad:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblDireccion" />
+
+                <TextView
+                    android:id="@+id/lblSangre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Tipo de Sangre:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblNacionalidad" />
+
+                <TextView
+                    android:id="@+id/lblValidez"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Validez:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblSangre" />
+                <TextView
+                    android:id="@+id/lblNoLicencia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"
+                    android:text="No de Licencia:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblValidez" />
+
+                <TextView
+                    android:id="@+id/lblClase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Clase:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblNoLicencia" />
+
+                <TextView
+                    android:id="@+id/lblObservacionesLC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Observaciones:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblClase" />
+
+                <EditText
+                    android:id="@+id/txtNombreLC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:hint="Nombre"
+                    android:inputType="textPersonName"
+                    android:textSize="15dp"
+                    android:textAllCaps="true"
+                    app:layout_constraintStart_toEndOf="@+id/lblNombreLC"
+                    app:layout_constraintTop_toBottomOf="@+id/lblTitulo"
+                    android:drawableLeft="@drawable/user"/>
+
+                <EditText
+                    android:id="@+id/txtApaternoLC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="43dp"
+                    android:layout_marginLeft="43dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="Apaterno"
+                    android:inputType="textPersonName"
+                    android:textSize="15dp"
+                    android:textAllCaps="true"
+                    app:layout_constraintStart_toEndOf="@+id/lblApaternoLC"
+                    app:layout_constraintTop_toBottomOf="@+id/txtNombreLC"
+                    android:drawableLeft="@drawable/user"/>
+
+                <EditText
+                    android:id="@+id/txtAmaternoLC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="39dp"
+                    android:layout_marginLeft="39dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="Amatermo"
+                    android:inputType="textPersonName"
+                    android:textSize="15dp"
+                    android:textAllCaps="true"
+                    app:layout_constraintStart_toEndOf="@+id/lblAmaternoLC"
+                    app:layout_constraintTop_toBottomOf="@+id/txtApaternoLC"
+                    android:drawableLeft="@drawable/user"/>
+
+                <EditText
+                    android:id="@+id/txtFechaNacimiento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="07/11/1992"
+                    android:inputType="textPersonName"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/lblFechaNacimiento"
+                    app:layout_constraintTop_toBottomOf="@+id/txtAmaternoLC"
+                    android:drawableLeft="@drawable/date"/>
+
+                <EditText
+                    android:id="@+id/txtDireccion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="85dp"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginLeft="48dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="Dirección"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/lblDireccion"
+                    app:layout_constraintTop_toBottomOf="@+id/txtFechaNacimiento" />
+
+                <RadioGroup
+                    android:id="@+id/radioNacionalidad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintStart_toEndOf="@+id/lblNacionalidad"
+                    app:layout_constraintTop_toBottomOf="@+id/txtDireccion"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioMexicana"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Mexicana" />
+
+                    <RadioButton
+                        android:id="@+id/radioExtrangera"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="Extranjera" />
+
+                </RadioGroup>
+
+                <Spinner
+                    android:id="@+id/spinSangre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/lblSangre"
+                    app:layout_constraintTop_toBottomOf="@+id/radioNacionalidad"
+                    android:entries="@array/arraySangre"/>
+
+                <EditText
+                    android:id="@+id/txtValidez"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="Validez"
+                    android:inputType="textPersonName"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/lblValidez"
+                    app:layout_constraintTop_toBottomOf="@+id/spinSangre"
+                    android:drawableLeft="@drawable/date"/>
+
+                <EditText
+                    android:id="@+id/txtNoLicencia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="No. Licencia"
+                    android:inputType="textPersonName"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/lblNoLicencia"
+                    app:layout_constraintTop_toBottomOf="@+id/txtValidez"
+                    android:drawableLeft="@drawable/numbers"/>
+
+                <Spinner
+                    android:id="@+id/spinClase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/lblClase"
+                    app:layout_constraintTop_toBottomOf="@+id/txtNoLicencia"
+                    android:entries="@array/arrayClase"/>
+
+                <EditText
+                    android:id="@+id/txtObservacionesLC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="85dp"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginLeft="48dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="Observaciones"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/lblObservacionesLC"
+                    app:layout_constraintTop_toBottomOf="@+id/spinClase" />
+
+                <Button
+                    android:id="@+id/btnQrLC"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="70dp"
+                    android:background="@drawable/qr"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblObservacionesLC"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:id="@+id/lblResultLC"
+                    android:layout_width="188dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:inputType="textMultiLine"
+                    android:text="INFORMACIÓN"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.150"
+                    app:layout_constraintStart_toEndOf="@+id/btnQrLC"
+                    app:layout_constraintTop_toBottomOf="@+id/txtObservacionesLC" />
+
+                <Button
+                    android:id="@+id/btnOpenInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Consultar Información"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.150"
+                    app:layout_constraintStart_toEndOf="@+id/btnQrLC"
+                    app:layout_constraintTop_toBottomOf="@+id/lblResultLC"
+                    android:visibility="invisible"
+                    android:background="@drawable/boton_redondo"
+                    android:textColor="@color/background"/>
+
+                <Button
+                    android:id="@+id/btnSiguienteLC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp"
+                    android:text="Continuar"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnOpenInfo"
+                    android:background="@drawable/boton_redondo"
+                    android:textColor="@color/background"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
