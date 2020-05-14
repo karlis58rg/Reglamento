@@ -228,7 +228,6 @@
             android:background="@drawable/drawable_pressed"
             android:layout_weight="0.25">
 
-
             <ImageView
                 android:layout_width="31.3dp"
                 android:layout_height="29.3dp"

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#1abf2b</color>
+    <color name="colorPrimary">#245ca4</color>
     <color name="colorPrimaryDark">#245ca4 </color>
     <color name="colorAccent">#D81B60</color>
     <color name="background">#FFFFFF</color>
+    <color name="splash">#3c433c</color>
 
     <!-- Colores Categoria PDF -->
     <color name="whiteTrans">#daffffff</color>
