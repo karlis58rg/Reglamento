@@ -1,5 +1,6 @@
 package mx.hgo.reglamento;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -20,9 +21,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.TextView;
 
 public class Reglamento extends AppCompatActivity {
 
+    public String cargarInfoUsuario;
+    /*********** SHARE PREFERENCE ************/
+    SharedPreferences share;
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
@@ -33,6 +38,12 @@ public class Reglamento extends AppCompatActivity {
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setItemIconTintList(null);
+        View headerView = navigationView.getHeaderView(0);
+        TextView lblUserName =(TextView)headerView.findViewById(R.id.lblAvatarMenu);
+        cargarDatos();
+        lblUserName.setText(cargarInfoUsuario);
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -57,5 +68,10 @@ public class Reglamento extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    public void cargarDatos(){
+        share = getSharedPreferences("main",MODE_PRIVATE);
+        cargarInfoUsuario = share.getString("USER","");
     }
 }
