@@ -4,6 +4,7 @@
     <item
         android:id="@+id/action_session"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:icon="@drawable/icn_salir"
+        android:title=""
+        app:showAsAction="always"/>
 </menu>

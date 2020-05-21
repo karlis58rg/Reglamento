@@ -6,6 +6,7 @@
     <color name="background">#003147</color>
     <color name="hint">#FFFFFF</color>
     <color name="backgroundtxt">#00FFE6</color>
+    <color name="pagarInfraccion">#FFBC00</color>
 
     <!-- Colores Categoria PDF -->
     <color name="whiteTrans">#daffffff</color>

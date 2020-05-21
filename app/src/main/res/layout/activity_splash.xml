@@ -6,15 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".Splash">
 
-    <ImageView
-        android:id="@+id/imageView3"
+    <pl.droidsonroids.gif.GifImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icn_splash_screen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icn_splash"
-        android:background="@color/background"/>
+        app:layout_constraintTop_toTopOf="parent">
+    </pl.droidsonroids.gif.GifImageView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -42,7 +42,7 @@
         <activity
             android:name=".TarjetaCirculacion"
             android:screenOrientation="portrait" />
-        <activity android:name=".Login" />
+        <activity android:name=".Login"/>
     </application>
 
 </manifest>
