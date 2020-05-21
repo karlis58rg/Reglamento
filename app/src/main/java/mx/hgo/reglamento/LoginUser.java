@@ -23,7 +23,7 @@ import okhttp3.Response;
 
 public class LoginUser extends AppCompatActivity {
     EditText txtPassUserLU;
-    TextView lblUsuarioLU;
+    TextView lblUsuarioLU,lblCambioUsuarioLU;
     String user,pass,respPass,cargarInfoUser;
     SharedPreferences share;
     SharedPreferences.Editor editor;
@@ -36,10 +36,22 @@ public class LoginUser extends AppCompatActivity {
         setContentView(R.layout.activity_login_user);
         cargarDatos();
         lblUsuarioLU = findViewById(R.id.lblUsuario);
+        lblCambioUsuarioLU = findViewById(R.id.lblCambiarUsuario);
         txtPassUserLU = findViewById(R.id.txtPassUser);
         btnEntrarLU = findViewById(R.id.btnEntrar);
-
         lblUsuarioLU.setText(cargarInfoUser);
+
+        lblCambioUsuarioLU.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                eliminarDatos();
+                Intent i = new Intent(LoginUser.this,Login.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+
 
         btnEntrarLU.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,6 +121,13 @@ public class LoginUser extends AppCompatActivity {
     public void cargarDatos(){
         share = getSharedPreferences("main",MODE_PRIVATE);
         cargarInfoUser = share.getString("USER","");
+    }
+
+    private void eliminarDatos(){
+        share = getSharedPreferences("main",MODE_PRIVATE);
+        editor = share.edit();
+        editor.remove("USER").commit();
+        editor.remove("STATUS").commit();
     }
 
     private void guardarDatosUserLogin(){

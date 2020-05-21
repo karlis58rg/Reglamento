@@ -1,15 +1,25 @@
 package mx.hgo.reglamento;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
@@ -22,12 +32,19 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class Reglamento extends AppCompatActivity {
+import mx.hgo.reglamento.ui.gallery.GalleryFragment;
+import mx.hgo.reglamento.ui.gallery.GalleryViewModel;
+import mx.hgo.reglamento.ui.home.HomeFragment;
+
+public class Reglamento extends AppCompatActivity  {
+    //implements NavigationView.OnNavigationItemSelectedListener
 
     public String cargarInfoUsuario;
     /*********** SHARE PREFERENCE ************/
     SharedPreferences share;
+    SharedPreferences.Editor editor;
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
@@ -36,9 +53,11 @@ public class Reglamento extends AppCompatActivity {
         setContentView(R.layout.activity_reglamento);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        final DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        //QUITA EL COLOR DE LOS ICONOS EN GRIS
         navigationView.setItemIconTintList(null);
+        //ACCEDE AL LABEL DEL ENCABEZADO
         View headerView = navigationView.getHeaderView(0);
         TextView lblUserName =(TextView)headerView.findViewById(R.id.lblAvatarMenu);
         cargarDatos();
@@ -54,13 +73,26 @@ public class Reglamento extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        //navigationView.setNavigationItemSelectedListener(this);
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.reglamento, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.action_session){
+            eliminarDatos();
+            Intent i = new Intent(Reglamento.this, LoginUser.class);
+            startActivity(i);
+            finish();
+            //Toast.makeText(getApplicationContext(),"ADIOS",Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -74,4 +106,11 @@ public class Reglamento extends AppCompatActivity {
         share = getSharedPreferences("main",MODE_PRIVATE);
         cargarInfoUsuario = share.getString("USER","");
     }
+
+    private void eliminarDatos(){
+        share = getSharedPreferences("main",MODE_PRIVATE);
+        editor = share.edit();
+        editor.remove("STATUSUSER").commit();
+    }
+
 }
