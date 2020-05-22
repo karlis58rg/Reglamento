@@ -2,11 +2,18 @@
 <resources>
     <color name="colorPrimary">#003147</color>
     <color name="colorPrimaryDark">#003147 </color>
-    <color name="colorAccent">#00FFE6</color>
-    <color name="background">#003147</color>
-    <color name="hint">#FFFFFF</color>
-    <color name="backgroundtxt">#00FFE6</color>
+    <color name="colorAccent">#0063f2</color>
+
+    <!--ESTILOS EN BLANCO Y AZUL -->
+    <color name="background">#FFFFFF</color>
+    <color name="backgroundLogoAzul">#003147</color>
+    <color name="hint">#001C44</color>
+    <color name="backgroundtxt">#003147</color>
     <color name="pagarInfraccion">#FFBC00</color>
+
+    <!--ESTILOS EN AZUL Y AZUL ACUA-->
+    <!-- <color name="background">#003147</color>
+    <color name="hint">#FFFFFF</color>-->
 
     <!-- Colores Categoria PDF -->
     <color name="whiteTrans">#daffffff</color>

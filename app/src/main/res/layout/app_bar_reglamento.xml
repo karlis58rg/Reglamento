@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:src="@drawable/icn_login_logo" />
+                android:src="@drawable/icn_logo_login" />
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>

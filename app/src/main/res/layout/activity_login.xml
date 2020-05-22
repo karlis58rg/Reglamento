@@ -9,13 +9,13 @@
 
     <ImageView
         android:id="@+id/imgLogoLogin"
-        android:layout_width="330dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icn_login_logo" />
+        app:srcCompat="@drawable/icn_logo_login"
+        android:background="@color/backgroundLogoAzul"/>
 
     <EditText
         android:id="@+id/txtUser"
@@ -28,28 +28,45 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:hint="Usuario"
+        android:maxLength="8"
+        android:digits="abcdefghijklmnñopqrstuvwxyz 1234567890"
         android:gravity="center"
         android:textColor="@color/hint"
-        android:drawableLeft="@drawable/user"
+        android:drawableRight="@drawable/user"
         android:backgroundTint="@color/backgroundtxt"
         android:drawableTint="@color/backgroundtxt"/>
 
-    <EditText
-        android:id="@+id/txtPass"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/PassLogin"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:drawableLeft="@drawable/pass"
-        android:ems="10"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
-        android:gravity="center"
-        android:textColor="@color/hint"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/backgroundtxt"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUser"
-        android:backgroundTint="@color/backgroundtxt"
-        android:drawableTint="@color/backgroundtxt"/>
+        app:layout_constraintTop_toBottomOf="@+id/txtUser">
+
+        <EditText
+            android:id="@+id/txtPass"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:maxLength="8"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:gravity="center"
+            android:textColor="@color/hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtUser"
+            android:backgroundTint="@color/backgroundtxt"
+            android:drawableTint="@color/backgroundtxt"
+            android:digits="abcdefghijklmnñopqrstuvwxyz 1234567890"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 
     <Button
         android:id="@+id/btnIniciar"
@@ -58,10 +75,11 @@
         android:layout_marginTop="70dp"
         android:text="Iniciar"
         android:textStyle="bold"
+        android:textColor="@color/background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPass"
+        app:layout_constraintTop_toBottomOf="@+id/PassLogin"
         android:background="@drawable/boton_redondo" />
 
 

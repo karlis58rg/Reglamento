@@ -9,13 +9,13 @@
 
     <ImageView
         android:id="@+id/imgLogoLoginUser"
-        android:layout_width="330dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icn_login_logo" />
+        app:srcCompat="@drawable/icn_logo_login"
+        android:background="@color/backgroundLogoAzul"/>
 
     <TextView
         android:id="@+id/lblSaludo"
@@ -68,6 +68,8 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:maxLength="8"
+        android:digits="abcdefghijklmnñopqrstuvwxyz 1234567890"
         android:inputType="textPassword"
         android:hint="Contraseña"
         android:textColor="@color/hint"
@@ -99,6 +101,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblPass"
-        android:background="@drawable/boton_redondo" />
+        android:background="@drawable/boton_redondo"
+        android:textColor="@color/background"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
