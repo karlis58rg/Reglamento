@@ -17,30 +17,39 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Contactos"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".LoginUser"
-            android:screenOrientation="portrait"/>
+        <activity android:name=".LugaresDePago"></activity>
+        <activity
+            android:name=".Contactos"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginUser"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Reglamento"
             android:label="@string/title_activity_reglamento"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Splash"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Splash"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ViewPDFController"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Reportes"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Pagos"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".PagosImpresiones"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ViewPDFController"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Reportes"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Pagos"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PagosImpresiones"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Infraccion"
             android:screenOrientation="portrait" />
@@ -50,8 +59,12 @@
         <activity
             android:name=".TarjetaCirculacion"
             android:screenOrientation="portrait" />
-        <activity android:name=".Login"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Login"
+            android:screenOrientation="portrait" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBGzst3BdPwh1xU1O_OLtzbC-js5nBUKes" />/>
     </application>
 
 </manifest>

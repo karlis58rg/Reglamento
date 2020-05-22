@@ -15,6 +15,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import mx.hgo.reglamento.Contactos;
+import mx.hgo.reglamento.LugaresDePago;
 import mx.hgo.reglamento.R;
 import mx.hgo.reglamento.ViewPDFController;
 
@@ -46,6 +48,22 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity(), ViewPDFController.class);
+                startActivity(i);
+            }
+        });
+
+        btnLugaresPago.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), LugaresDePago.class);
+                startActivity(i);
+            }
+        });
+
+        btnContacto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), Contactos.class);
                 startActivity(i);
             }
         });

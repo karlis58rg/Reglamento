@@ -36,16 +36,16 @@ public class ViewPDFController extends BaseController implements View.OnClickLis
     private EditText mEditText;
     private DrawerLayout drawerLayout;
 
-    LinearLayout lyInicio;
-    LinearLayout lyCategoria;
-    LinearLayout lyContacto;
-    LinearLayout lyFavoritos;
-    LinearLayout lyMenu;
-    LinearLayout lySearch;
+    private LinearLayout lyInicio;
+    private LinearLayout lyCategoria;
+    private LinearLayout lyContacto;
+    private LinearLayout lyFavoritos;
+    private LinearLayout lyMenu;
+    private LinearLayout lySearch;
     LinearLayout lySearch2;
     ImageView btnBuscar;
     ImageView btnCancelar;
-    ImageView btnList;
+    private ImageView btnList;
     LinearLayout contentWebView;
 
     private static boolean banderaDetalle;
@@ -158,6 +158,25 @@ public class ViewPDFController extends BaseController implements View.OnClickLis
 
 
         }
+
+        /******************EVENTOS DEL MENÚ **********************/
+        lyCategoria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ViewPDFController.this, LugaresDePago.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        lyContacto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ViewPDFController.this, Contactos.class);
+                startActivity(i);
+
+            }
+        });
     }
 
     @Override
