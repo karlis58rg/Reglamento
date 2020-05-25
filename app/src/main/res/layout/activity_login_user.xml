@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:maxLength="8"
-        android:digits="abcdefghijklmnñopqrstuvwxyz 1234567890"
+        android:digits="ABCDEFGHIJKLMNÑOPQRSTUVWXYZ 1234567890"
         android:inputType="textPassword"
         android:hint="Contraseña"
         android:textColor="@color/hint"

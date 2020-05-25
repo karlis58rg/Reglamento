@@ -17,11 +17,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".TarjetasConductor"></activity>
-        <activity android:name=".Contactos"></activity>
-        <activity android:name=".LugaresDePago" />
-        <activity
-            android:name=".LoginUser"
+        <activity android:name=".TarjetasConductor"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Contactos"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LugaresDePago"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LoginUser"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Reglamento"
@@ -61,7 +63,6 @@
         <activity
             android:name=".Login"
             android:screenOrientation="portrait" />
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBGzst3BdPwh1xU1O_OLtzbC-js5nBUKes" />
