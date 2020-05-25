@@ -46,6 +46,8 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -205,11 +207,12 @@ public class MapaDePago extends Fragment implements OnMapReadyCallback {
         map = googleMap;
         // Add a marker in Sydney, Australia, and move the camera.
         LatLng punto1 = new LatLng(20.1229876, -98.7383968);
-        map.addMarker(new MarkerOptions().position(punto1).title("PLAZA JUAREZ"));
+        map.addMarker(new MarkerOptions().position(punto1).title("Módulo de infracciones Plaza Juarez"));
+        map.addMarker(new MarkerOptions().position(punto1).snippet("Horario: "));
         map.moveCamera(CameraUpdateFactory.newLatLng(punto1));
 
         LatLng punto2 = new LatLng(20.0641948, -98.7949564);
-        map.addMarker(new MarkerOptions().position(punto2).title("PITAHAYAS "));
+        map.addMarker(new MarkerOptions().position(punto2).title("MÓDULO DE INFRACCIONES PITAHAYAS"));
         map.moveCamera(CameraUpdateFactory.newLatLng(punto2));
 
         final String[] permisos = {

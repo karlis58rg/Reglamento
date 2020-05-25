@@ -17,6 +17,8 @@ import androidx.lifecycle.ViewModelProviders;
 import mx.hgo.reglamento.Contactos;
 import mx.hgo.reglamento.LugaresDePago;
 import mx.hgo.reglamento.R;
+import mx.hgo.reglamento.TarjetaCirculacion;
+import mx.hgo.reglamento.TarjetasConductor;
 import mx.hgo.reglamento.ViewPDFController;
 
 public class HomeFragment extends Fragment {
@@ -40,7 +42,8 @@ public class HomeFragment extends Fragment {
         btnTerminal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(getActivity(), TarjetasConductor.class);
+                startActivity(i);
             }
         });
         btnReglamento.setOnClickListener(new View.OnClickListener() {

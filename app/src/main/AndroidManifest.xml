@@ -17,9 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Contactos">
-
-        </activity>
+        <activity android:name=".TarjetasConductor"></activity>
+        <activity android:name=".Contactos"></activity>
         <activity android:name=".LugaresDePago" />
         <activity
             android:name=".LoginUser"
