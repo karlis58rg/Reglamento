@@ -172,7 +172,6 @@
                     android:text="Pachuca de Soto, Hidalgo"
                     android:textSize="19sp" />
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"

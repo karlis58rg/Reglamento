@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 public class TarjetasConductor extends AppCompatActivity {
-    private ImageView btnLicenciaTC,btnTarjetaTC;
+    private ImageView btnLicenciaC,btnTarjetaC;
     private LinearLayout btnReglamentoTC,btnLugaresPagoTC,btnContactoTC,btnTabuladorTC;
 
     @Override
@@ -18,23 +18,25 @@ public class TarjetasConductor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tarjetas_conductor);
 
-        btnLicenciaTC = findViewById(R.id.imgTarjetaCirculacon);
-        btnTarjetaTC = findViewById(R.id.imgLicenciaConducir);
+        btnLicenciaC = findViewById(R.id.imgTarjetaCirculacon);
+        btnTarjetaC = findViewById(R.id.imgLicenciaConducir);
 
         btnReglamentoTC = findViewById(R.id.lyInicio);
         btnLugaresPagoTC = findViewById(R.id.lyCategoria);
         btnContactoTC = findViewById(R.id.lyContacto);
 
-        btnLicenciaTC.setOnClickListener(new View.OnClickListener() {
+        btnLicenciaC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
 
-        btnTarjetaTC.setOnClickListener(new View.OnClickListener() {
+        btnTarjetaC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(TarjetasConductor.this, TarjetaCirculacion.class);
+                startActivity(i);
 
             }
         });

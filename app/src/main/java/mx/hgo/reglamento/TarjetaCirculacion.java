@@ -29,7 +29,7 @@ public class TarjetaCirculacion extends AppCompatActivity implements AdapterView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tarjeta_circulacion);
 
-        btnQrScan = findViewById(R.id.btnQr);
+      /*  btnQrScan = findViewById(R.id.btnQr);
         lblResultScaner = findViewById(R.id.lblResult);
         btnOpenResultQr = findViewById(R.id.btnOpenInfo);
         btnQrScan.setOnClickListener(mOnClickListener);
@@ -40,7 +40,7 @@ public class TarjetaCirculacion extends AppCompatActivity implements AdapterView
         sMarca = findViewById(R.id.spinTipoServicio);
         sSubMarca = findViewById(R.id.spinTipoServicio);
         sModelo = findViewById(R.id.spinTipoServicio);
-        sColor = findViewById(R.id.spinTipoServicio);
+        sColor = findViewById(R.id.spinTipoServicio);*/
 
         /*
         ArrayAdapter<CharSequence> adapterTipoServicio = ArrayAdapter.createFromResource(this,R.array.arrayMarca, android.R.layout.simple_spinner_item);
@@ -68,22 +68,22 @@ public class TarjetaCirculacion extends AppCompatActivity implements AdapterView
         sColor.setAdapter(adapterColor);
         sColor.setOnItemSelectedListener(this);*/
 
-        btnOpenResultQr.setOnClickListener(new View.OnClickListener() {
+      /*  btnOpenResultQr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Uri uriUrl = Uri.parse(openResultQR);
                 Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
                 startActivity(launchBrowser);
             }
-        });
+        });*/
 
-        btnContinuarTC.setOnClickListener(new View.OnClickListener() {
+       /* btnContinuarTC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(TarjetaCirculacion.this, LicenciaConducir.class);
                 startActivity(i);
             }
-        });
+        });*/
     }
 
     @Override
@@ -106,8 +106,8 @@ public class TarjetaCirculacion extends AppCompatActivity implements AdapterView
         @Override
         public void onClick(View v) {
             switch (v.getId()){
-                case R.id.btnQr:
-                    new IntentIntegrator(TarjetaCirculacion.this).initiateScan();
+                //case R.id.btnQr:
+                  //  new IntentIntegrator(TarjetaCirculacion.this).initiateScan();
             }
         }
     };

@@ -375,7 +375,7 @@
                     android:layout_marginStart="24dp"
                     android:layout_marginLeft="24dp"
                     android:layout_marginTop="70dp"
-                    android:background="@drawable/qr"
+                    android:background="@drawable/icn_qr"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lblObservacionesLC"
                     android:layout_marginBottom="10dp"/>
