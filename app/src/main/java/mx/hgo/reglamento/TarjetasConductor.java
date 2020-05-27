@@ -18,8 +18,8 @@ public class TarjetasConductor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tarjetas_conductor);
 
-        btnLicenciaC = findViewById(R.id.imgTarjetaCirculacon);
-        btnTarjetaC = findViewById(R.id.imgLicenciaConducir);
+        btnLicenciaC = findViewById(R.id.imgLicenciaConducir);
+        btnTarjetaC = findViewById(R.id.imgTarjetaCirculacon);
 
         btnReglamentoTC = findViewById(R.id.lyInicio);
         btnLugaresPagoTC = findViewById(R.id.lyCategoria);
