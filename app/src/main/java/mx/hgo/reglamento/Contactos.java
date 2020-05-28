@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 public class Contactos extends AppCompatActivity {
-    private LinearLayout btnReglamento,btnLugaresPago,btnMenu,btnTabulador;
+    private LinearLayout btnReglamento,btnLugaresPago,btnTabulador;
     private ImageView btnList;
 
     @Override
@@ -19,7 +19,6 @@ public class Contactos extends AppCompatActivity {
 
         btnReglamento = findViewById(R.id.lyInicio);
         btnLugaresPago = findViewById(R.id.lyCategoria);
-        btnMenu = findViewById(R.id.lyContacto);
         btnTabulador = findViewById(R.id.lyFavoritos);
         btnList = findViewById(R.id.btnList);
 

@@ -29,7 +29,7 @@ public class TarjetaCirculacion extends AppCompatActivity implements AdapterView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tarjeta_circulacion);
 
-      /*  btnQrScan = findViewById(R.id.btnQr);
+      /*btnQrScan = findViewById(R.id.btnQr);
         lblResultScaner = findViewById(R.id.lblResult);
         btnOpenResultQr = findViewById(R.id.btnOpenInfo);
         btnQrScan.setOnClickListener(mOnClickListener);

@@ -36,7 +36,7 @@
                     android:gravity="center"
                     android:layout_height="match_parent">
                     <ImageView
-                        android:id="@+id/btnList"
+                        android:id="@+id/btnListL"
                         android:layout_width="35dp"
                         android:src="@drawable/icn_list_white"
                         android:layout_height="35dp" />
@@ -97,15 +97,14 @@
                 </LinearLayout>
                 <!--IMAGEN2 TITLE-->
                 <LinearLayout
-                    android:id="@+id/imgQrLicenciaConducir"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:weightSum="1"
-                    android:background="@drawable/drawable_pressed"
                     android:layout_weight="0.12">
                     <ImageView
+                        android:id="@+id/imgQrLicenciaConducir"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:src="@drawable/icn_qr"/>
@@ -163,15 +162,14 @@
                         </LinearLayout>
                         <!--IMG BUSCAR REGISTRO 1-->
                         <LinearLayout
-                            android:id="@+id/imgBuscarLicencia"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="0.03"
-                            android:background="@drawable/drawable_pressed"
                             android:gravity="center"
                             android:orientation="vertical"
                             android:weightSum="1">
                             <ImageView
+                                android:id="@+id/imgBuscarLicencia"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:src="@drawable/icn_buscar" />
@@ -710,7 +708,6 @@
                         android:orientation="horizontal">
                         <!--IMAGEN 1 FOODER-->
                         <LinearLayout
-                            android:id="@+id/imgTarjetaCirculaconL"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
@@ -718,6 +715,7 @@
                             android:weightSum="1"
                             android:layout_weight="0.12">
                             <ImageView
+                                android:id="@+id/imgTarjetaCirculaconL"
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
                                 android:src="@drawable/ic_tarjeta"/>
@@ -730,9 +728,9 @@
                             android:orientation="vertical"
                             android:gravity="center"
                             android:weightSum="1"
-                            android:background="@drawable/drawable_pressed"
                             android:layout_weight="0.25">
                             <Button
+                                android:id="@+id/imgGuardarL"
                                 android:layout_width="wrap_content"
                                 android:layout_height="0dp"
                                 android:layout_weight="0.4"
@@ -742,15 +740,14 @@
                         </LinearLayout>
                         <!--IMAGEN2 FOODER-->
                         <LinearLayout
-                            android:id="@+id/imgTerminalLC"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
                             android:gravity="center"
                             android:weightSum="1"
-                            android:background="@drawable/drawable_pressed"
                             android:layout_weight="0.12">
                             <ImageView
+                                android:id="@+id/imgTerminalLC"
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
                                 android:src="@drawable/icn_terminal"/>
@@ -762,8 +759,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:orientation="horizontal"
-                        android:visibility="gone">
+                        android:orientation="horizontal">
                         <!--QR-->
                         <LinearLayout
                             android:id="@+id/lblQRL"
@@ -817,7 +813,7 @@
         android:weightSum="1">
 
         <LinearLayout
-            android:id="@+id/lyInicio"
+            android:id="@+id/lyInicioL"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -842,7 +838,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/lyCategoria"
+            android:id="@+id/lyCategoriaL"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -868,7 +864,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/lyContacto"
+            android:id="@+id/lyContactoL"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -892,7 +888,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/lyFavoritos"
+            android:id="@+id/lyFavoritosL"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical"

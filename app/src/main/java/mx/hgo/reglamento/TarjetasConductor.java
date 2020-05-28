@@ -28,7 +28,8 @@ public class TarjetasConductor extends AppCompatActivity {
         btnLicenciaC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(TarjetasConductor.this, LicenciaConducir.class);
+                startActivity(i);
             }
         });
 
