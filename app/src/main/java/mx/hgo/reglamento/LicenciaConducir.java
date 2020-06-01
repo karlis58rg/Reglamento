@@ -43,6 +43,7 @@ public class LicenciaConducir extends AppCompatActivity {
     private LinearLayout btnReglamento,btnLugaresPago,btnContactos,btnTabulador;
     String ResultQR;
     String Tag = "LICENCIA CONDUCIR";
+    String licencia,nombre,apaterno,amaterno,fNacimiento,direccion,sangre,validez,clase,observaciones;
     String resNacionalidad = "";
     String resObservaciones = "";
 
@@ -94,7 +95,7 @@ public class LicenciaConducir extends AppCompatActivity {
         btnBuscarL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                getUsuaioL();
             }
         });
 
@@ -109,7 +110,7 @@ public class LicenciaConducir extends AppCompatActivity {
         btnGuardarL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getUsuaioL();
+
             }
         });
 
@@ -168,9 +169,10 @@ public class LicenciaConducir extends AppCompatActivity {
     /********************************************************************************************************************/
     /******************GET A LA BD***********************************/
     public void getUsuaioL() {
+        licencia = txtLicencia.getText().toString();
         final OkHttpClient client = new OkHttpClient();
         final Request request = new Request.Builder()
-                .url("http://187.174.102.142/AppTransito/api/LicenciaConducir?noLicencia=10101")
+                .url("http://187.174.102.142/AppTransito/api/LicenciaConducir?noLicencia="+licencia)
                 .build();
 
         client.newCall(request).enqueue(new Callback() {
@@ -189,34 +191,49 @@ public class LicenciaConducir extends AppCompatActivity {
                         @Override
                         public void run() {
                             try {
-                                JSONObject jObj = null;
-                                jObj = new JSONObject(""+myResponse+"");
-                                String nombre = jObj.getString("NombreL");
-                                txtNombre.setText(nombre);
-                                System.out.println(jObj.getString("NombreL"));
-                                System.out.println(nombre);
-                                /*txtNombre.setText(jObj.getString("NombreL"));
-                                txtAmaterno.setText(jObj.getString("ApellidoPL"));
-                                txtAmaterno.setText(jObj.getString("ApellidoML"));
-                                txtFNacimiento.setText(jObj.getString("FechaNacimiento"));
-                                txtDireccion.setText(jObj.getString("Direccion"));
-                                txtSangre.setText(jObj.getString("Sangre"));
-                                txtValidez.setText(jObj.getString("Validez"));
-                                txtLicencia.setText(jObj.getString("NoLicencia"));
-                                txtClase.setText(jObj.getString("Clase"));
-                                resNacionalidad = jObj.getString("Nacionalidad");
-                                resObservaciones = jObj.getString("Observaciones");
-                                if(resNacionalidad == "Mexicano"){
-                                    rMexicano = (RadioButton)radioNacionalidad.getChildAt(0);
-                                    rMexicano.setChecked(true);
-                                }else {
-                                    rExtranjero = (RadioButton)radioNacionalidad.getChildAt(1);
-                                    rExtranjero.setChecked(true);
+                                if(myResponse == null){
+                                    Toast.makeText(getApplicationContext(),"NO SE CUENTA CON INFORMACIÓN",Toast.LENGTH_SHORT).show();
+                                }else{
+                                    JSONObject jObj = null;
+                                    jObj = new JSONObject(""+myResponse+"");
+                                    nombre = jObj.getString("NombreL");
+                                    apaterno = jObj.getString("ApellidoPL");
+                                    amaterno = jObj.getString("ApellidoML");
+                                    fNacimiento = jObj.getString("FechaNacimiento");
+                                    direccion = jObj.getString("Direccion");
+                                    sangre = jObj.getString("Sangre");
+                                    validez = jObj.getString("Validez");
+                                    clase = jObj.getString("Clase");
+                                    txtNombre.setText(nombre);
+                                    txtApaterno.setText(apaterno);
+                                    txtAmaterno.setText(amaterno);
+                                    txtFNacimiento.setText(fNacimiento);
+                                    txtDireccion.setText(direccion);
+                                    txtSangre.setText(sangre);
+                                    txtValidez.setText(validez);
+                                    txtLicencia.setText(licencia);
+                                    txtClase.setText(clase);
+                                    resNacionalidad = jObj.getString("Nacionalidad");
+                                    resObservaciones = jObj.getString("Observaciones");
+                                    System.out.println(resNacionalidad);
+                                    System.out.println(resObservaciones);
+                                    if(resNacionalidad == "Mexicano"){
+                                        rMexicano = (RadioButton)radioNacionalidad.getChildAt(0);
+                                        rMexicano.setChecked(true);
+                                    }else {
+                                        rExtranjero = (RadioButton)radioNacionalidad.getChildAt(1);
+                                        rExtranjero.setChecked(true);
+                                    }
+                                    if(resObservaciones == null){
+                                        txtObservaciones.setText("SIN OBSERVACIONES");
+                                    }else{
+                                        resObservaciones = jObj.getString("Observaciones");
+                                        txtObservaciones.setText(resObservaciones);
+                                    }
+                                    Log.i("HERE", ""+jObj);
+
                                 }
-                                if(resNacionalidad == null){
-                                    txtObservaciones.setText("SIN OBSERVACIONES");
-                                }*/
-                                Log.i("HERE", ""+jObj);
+
                             }catch(JSONException e){
                                 e.printStackTrace();
                             }

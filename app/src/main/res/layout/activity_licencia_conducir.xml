@@ -115,6 +115,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.79">
+
                 <!--LINEAR BODY-->
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -157,7 +158,7 @@
                             <EditText
                                 android:id="@+id/txtNoLicencia"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="50dp"
                                 android:gravity="center"/>
                         </LinearLayout>
                         <!--IMG BUSCAR REGISTRO 1-->
@@ -211,7 +212,7 @@
                             <EditText
                                 android:id="@+id/txtNombreL"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="50dp"
                                 android:gravity="center"/>
                         </LinearLayout>
                         <!--IMG BUSCAR REGISTRO 2-->
@@ -262,7 +263,7 @@
                             <EditText
                                 android:id="@+id/txtApaternoL"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="50dp"
                                 android:gravity="center"/>
                         </LinearLayout>
                         <!--IMG BUSCAR REGISTRO 3-->
@@ -313,7 +314,7 @@
                             <EditText
                                 android:id="@+id/txtAmaternoL"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="50dp"
                                 android:gravity="center"/>
                         </LinearLayout>
                         <!--IMG BUSCAR REGISTRO 4-->
@@ -364,7 +365,7 @@
                             <EditText
                                 android:id="@+id/txtFechaNacimiento"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="50dp"
                                 android:gravity="center"/>
                         </LinearLayout>
                         <!--IMG BUSCAR REGISTRO 5-->
@@ -415,7 +416,7 @@
                             <EditText
                                 android:id="@+id/txtDireccion"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="50dp"
                                 android:gravity="center"/>
                         </LinearLayout>
                         <!--IMG BUSCAR REGISTRO 6-->
@@ -530,7 +531,7 @@
                             <EditText
                                 android:id="@+id/txtTipoSangre"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="50dp"
                                 android:gravity="center"/>
                         </LinearLayout>
                         <!--IMG BUSCAR REGISTRO 8-->
@@ -581,7 +582,7 @@
                             <EditText
                                 android:id="@+id/txtValidez"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="50dp"
                                 android:gravity="center"/>
                         </LinearLayout>
                         <!--IMG BUSCAR REGISTRO 9-->
@@ -632,7 +633,7 @@
                             <EditText
                                 android:id="@+id/txtClase"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="50dp"
                                 android:gravity="center"/>
                         </LinearLayout>
                         <!--IMG BUSCAR REGISTRO 10-->
@@ -759,7 +760,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:visibility="gone">
                         <!--QR-->
                         <LinearLayout
                             android:id="@+id/lblQRL"
@@ -800,6 +802,7 @@
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
+
             </ScrollView>
         </LinearLayout>
     </androidx.drawerlayout.widget.DrawerLayout>
