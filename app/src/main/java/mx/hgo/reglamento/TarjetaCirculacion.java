@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -22,12 +23,24 @@ public class TarjetaCirculacion extends AppCompatActivity implements AdapterView
     private TextView lblResultScaner;
     private Spinner sTipoServicio,sMarca,sSubMarca,sModelo,sColor;
     String openResultQR;
+    ImageView btnLicencia;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tarjeta_circulacion);
+
+        btnLicencia = findViewById(R.id.imgLicenciaTC);
+
+        btnLicencia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TarjetaCirculacion.this,LicenciaConducir.class);
+                startActivity(i);
+            }
+        });
+
 
       /*btnQrScan = findViewById(R.id.btnQr);
         lblResultScaner = findViewById(R.id.lblResult);

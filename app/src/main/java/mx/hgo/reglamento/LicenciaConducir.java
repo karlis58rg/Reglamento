@@ -3,13 +3,17 @@ package mx.hgo.reglamento;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.Looper;
+import android.provider.CalendarContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -26,11 +30,18 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class LicenciaConducir extends AppCompatActivity {
@@ -41,11 +52,13 @@ public class LicenciaConducir extends AppCompatActivity {
     RadioButton rMexicano,rExtranjero;
     TextView lblResultScaner;
     private LinearLayout btnReglamento,btnLugaresPago,btnContactos,btnTabulador;
-    String ResultQR;
+    String ResultQR = "SIN QR";
     String Tag = "LICENCIA CONDUCIR";
-    String licencia,nombre,apaterno,amaterno,fNacimiento,direccion,sangre,validez,clase,observaciones;
+    String licencia,nombre,apaterno,amaterno,fNacimiento,direccion,sangre,validez,clase,nacionalidad,observaciones,respuestaJson;
     String resNacionalidad = "";
     String resObservaciones = "";
+    DatePickerDialog datePickerDialog;
+    Calendar calendar = Calendar.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +74,7 @@ public class LicenciaConducir extends AppCompatActivity {
         txtLicencia = findViewById(R.id.txtNoLicencia);
         txtNombre = findViewById(R.id.txtNombreL);
         txtApaterno = findViewById(R.id.txtApaternoL);
-        txtAmaterno = findViewById(R.id.txtApaternoL);
+        txtAmaterno = findViewById(R.id.txtAmaternoL);
         txtFNacimiento = findViewById(R.id.txtFechaNacimiento);
         txtDireccion = findViewById(R.id.txtDireccion);
         txtSangre = findViewById(R.id.txtTipoSangre);
@@ -76,6 +89,40 @@ public class LicenciaConducir extends AppCompatActivity {
         btnLugaresPago = findViewById(R.id.lyCategoriaL);
         btnContactos = findViewById(R.id.lyContactoL);
         btnTabulador = findViewById(R.id.lyFavoritosL);
+
+        final int year = calendar.get(Calendar.YEAR);
+        final int month = calendar.get(Calendar.MONTH);
+        final int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        txtFNacimiento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePickerDialog = new DatePickerDialog(LicenciaConducir.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        month = month + 1;
+                        String date = day +"-"+month+"-"+year;
+                        txtFNacimiento.setText(date);
+                    }
+                },year,month,day);
+                datePickerDialog.show();
+            }
+        });
+
+        txtValidez.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePickerDialog = new DatePickerDialog(LicenciaConducir.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        month = month + 1;
+                        String date = day +"-"+month+"-"+year;
+                        txtValidez.setText(date);
+                    }
+                },year,month,day);
+                datePickerDialog.show();
+            }
+        });
 
         btnMenuL.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,7 +142,13 @@ public class LicenciaConducir extends AppCompatActivity {
         btnBuscarL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getUsuaioL();
+                if(txtLicencia.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(),"EL NÚMERO DE LICENCIA ES NECESARIO",Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(getApplicationContext(),"UN MOMENTO POR FAVOR",Toast.LENGTH_SHORT).show();
+                    getUsuaioL();
+                }
+
             }
         });
 
@@ -110,7 +163,12 @@ public class LicenciaConducir extends AppCompatActivity {
         btnGuardarL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if(txtLicencia.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(),"EL NÚMERO DE LICENCIA ES NECESARIO",Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(getApplicationContext(),"UN MOMENTO POR FAVOR",Toast.LENGTH_SHORT).show();
+                    insertRegistroLicencia();
+                }
             }
         });
 
@@ -148,7 +206,20 @@ public class LicenciaConducir extends AppCompatActivity {
 
             }
         });
+
+        radioNacionalidad.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radioMexicanaL) {
+                    resNacionalidad = "Mexicana";
+                } else if (checkedId == R.id.radioExtrangeraL) {
+                    resNacionalidad = "Extranjera";
+                }
+
+            }
+        });
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -191,7 +262,8 @@ public class LicenciaConducir extends AppCompatActivity {
                         @Override
                         public void run() {
                             try {
-                                if(myResponse == null){
+                                respuestaJson = "null";
+                                if(myResponse.equals(respuestaJson)){
                                     Toast.makeText(getApplicationContext(),"NO SE CUENTA CON INFORMACIÓN",Toast.LENGTH_SHORT).show();
                                 }else{
                                     JSONObject jObj = null;
@@ -217,14 +289,16 @@ public class LicenciaConducir extends AppCompatActivity {
                                     resObservaciones = jObj.getString("Observaciones");
                                     System.out.println(resNacionalidad);
                                     System.out.println(resObservaciones);
-                                    if(resNacionalidad == "Mexicano"){
+                                    nacionalidad = "Mexicana";
+                                    observaciones = "null";
+                                    if(resNacionalidad.equals(nacionalidad)){
                                         rMexicano = (RadioButton)radioNacionalidad.getChildAt(0);
                                         rMexicano.setChecked(true);
                                     }else {
                                         rExtranjero = (RadioButton)radioNacionalidad.getChildAt(1);
                                         rExtranjero.setChecked(true);
                                     }
-                                    if(resObservaciones == null){
+                                    if(resObservaciones.equals(observaciones)){
                                         txtObservaciones.setText("SIN OBSERVACIONES");
                                     }else{
                                         resObservaciones = jObj.getString("Observaciones");
@@ -243,6 +317,77 @@ public class LicenciaConducir extends AppCompatActivity {
                 }
             }
 
+        });
+    }
+
+    //***************** INSERTA A LA BD MEDIANTE EL WS **************************//
+    private void insertRegistroLicencia() {
+        nombre = txtNombre.getText().toString().toUpperCase();
+        apaterno = txtApaterno.getText().toString().toUpperCase();
+        amaterno = txtAmaterno.getText().toString().toUpperCase();
+        fNacimiento = txtFNacimiento.getText().toString();
+        direccion = txtDireccion.getText().toString().toUpperCase();
+        sangre = txtSangre.getText().toString();
+        validez = txtValidez.getText().toString();
+        licencia = txtLicencia.getText().toString();
+        clase = txtClase.getText().toString().toUpperCase();
+        observaciones = txtObservaciones.getText().toString().toUpperCase();
+
+        OkHttpClient client = new OkHttpClient();
+        RequestBody body = new FormBody.Builder()
+                .add("NombreL", nombre)
+                .add("ApellidoPL", apaterno)
+                .add("ApellidoML", amaterno)
+                .add("FechaNacimiento", fNacimiento)
+                .add("Direccion", direccion)
+                .add("Nacionalidad", resNacionalidad)
+                .add("Sangre", sangre)
+                .add("Validez", validez)
+                .add("NoLicencia", licencia)
+                .add("Clase", clase)
+                .add("Observaciones", observaciones)
+                .add("Qr", ResultQR)
+                .build();
+
+        Request request = new Request.Builder()
+                .url("http://187.174.102.142/AppTransito/api/LicenciaConducir/")
+                .post(body)
+                .build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+                Looper.prepare(); // to be able to make toast
+                Toast.makeText(getApplicationContext(), "ERROR AL ENVIAR SU REGISTRO", Toast.LENGTH_LONG).show();
+                Looper.loop();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    final String myResponse = response.body().toString();
+                    LicenciaConducir.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(), "REGISTRO ENVIADO CON EXITO", Toast.LENGTH_SHORT).show();
+                            txtNombre.setText("");
+                            txtApaterno.setText("");
+                            txtAmaterno.setText("");
+                            txtFNacimiento.setText("");
+                            txtDireccion.setText("");
+                            radioNacionalidad.clearCheck();
+                            txtSangre.setText("");
+                            txtValidez.setText("");
+                            txtLicencia.setText("");
+                            txtClase.setText("");
+                            txtObservaciones.setText("");
+                            lblResultScaner.setText("");
+
+                        }
+                    });
+                }
+
+            }
         });
     }
 }

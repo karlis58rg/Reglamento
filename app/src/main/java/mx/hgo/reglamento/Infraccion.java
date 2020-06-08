@@ -15,8 +15,8 @@ public class Infraccion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_infraccion);
 
-        btnSiguienteInfrac = findViewById(R.id.btnTerminaInfraccion);
-        btnReglamento = findViewById(R.id.btnVerReglamento);
+       // btnSiguienteInfrac = findViewById(R.id.btnTerminaInfraccion);
+       // btnReglamento = findViewById(R.id.btnVerReglamento);
 
         btnSiguienteInfrac.setOnClickListener(new View.OnClickListener() {
             @Override

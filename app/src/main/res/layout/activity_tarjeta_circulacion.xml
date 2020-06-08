@@ -7,6 +7,7 @@
     android:weightSum="1"
     android:orientation="vertical"
     tools:context=".TarjetaCirculacion">
+
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawer_layout"
         android:background="@android:color/white"
@@ -1229,7 +1230,7 @@
                         android:orientation="horizontal">
                         <!--IMAGEN 1 FOODER-->
                         <LinearLayout
-                            android:id="@+id/imgLicenciaConducirTC"
+                            android:id="@+id/lyLicenciaConducirTC"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
@@ -1237,6 +1238,7 @@
                             android:weightSum="1"
                             android:layout_weight="0.12">
                             <ImageView
+                                android:id="@+id/imgLicenciaTC"
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
                                 android:src="@drawable/ic_licencia"/>

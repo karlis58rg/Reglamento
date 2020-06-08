@@ -22,19 +22,17 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="250dp"
+        android:digits="abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ 1234567890"
+        android:drawableRight="@drawable/user"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:gravity="center"
+        android:hint="Usuario"
+        android:inputType="textCapCharacters"
+        android:maxLength="8"
+        android:textColor="@color/hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:hint="Usuario"
-        android:maxLength="8"
-        android:digits="ABCDEFGHIJKLMNÑOPQRSTUVWXYZ 1234567890"
-        android:gravity="center"
-        android:textColor="@color/hint"
-        android:drawableRight="@drawable/user"
-        android:backgroundTint="@color/backgroundtxt"
-        android:drawableTint="@color/backgroundtxt"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/PassLogin"
@@ -61,9 +59,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtUser"
-            android:backgroundTint="@color/backgroundtxt"
-            android:drawableTint="@color/backgroundtxt"
-            android:digits="ABCDEFGHIJKLMNÑOPQRSTUVWXYZ 1234567890"/>
+            android:digits="abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ 1234567890"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 

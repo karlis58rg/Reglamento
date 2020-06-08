@@ -366,6 +366,8 @@
                                 android:id="@+id/txtFechaNacimiento"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
+                                android:inputType="date"
+                                android:focusable="false"
                                 android:gravity="center"/>
                         </LinearLayout>
                         <!--IMG BUSCAR REGISTRO 5-->
@@ -384,7 +386,7 @@
                     <LinearLayout
                         android:id="@+id/contentDatosDireccion"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="35dp"
                         android:layout_weight="1"
                         android:orientation="horizontal">
                         <!--TITULO REGISTRO 6-->
@@ -416,7 +418,8 @@
                             <EditText
                                 android:id="@+id/txtDireccion"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
+                                android:layout_height="54dp"
+                                android:textSize="13sp"
                                 android:gravity="center"/>
                         </LinearLayout>
                         <!--IMG BUSCAR REGISTRO 6-->
@@ -583,6 +586,8 @@
                                 android:id="@+id/txtValidez"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
+                                android:inputType="date"
+                                android:focusable="false"
                                 android:gravity="center"/>
                         </LinearLayout>
                         <!--IMG BUSCAR REGISTRO 9-->
@@ -652,7 +657,7 @@
                     <LinearLayout
                         android:id="@+id/contentDatosObservacionesL"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="40dp"
                         android:layout_weight="1"
                         android:orientation="horizontal">
                         <!--TITULO REGISTRO 11-->

@@ -69,12 +69,11 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:maxLength="8"
-        android:digits="ABCDEFGHIJKLMNÑOPQRSTUVWXYZ 1234567890"
+        android:digits="abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ 1234567890"
         android:inputType="textPassword"
+        android:textAllCaps="true"
         android:hint="Contraseña"
-        android:textColor="@color/hint"
-        android:backgroundTint="@color/backgroundtxt"
-        android:drawableTint="@color/backgroundtxt"/>
+        android:textColor="@color/hint"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
