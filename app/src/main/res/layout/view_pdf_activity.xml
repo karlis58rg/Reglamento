@@ -25,7 +25,7 @@
 
             <LinearLayout
                 android:id="@+id/lySearch"
-                android:background="@color/backgroundLogoAzul"
+                android:background="@color/backgroundLogoCafe"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.08"
@@ -74,7 +74,7 @@
             <LinearLayout
                 android:id="@+id/lySearch2"
                 android:visibility="gone"
-                android:background="@color/backgroundLogoAzul"
+                android:background="@color/backgroundLogoCafe"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.08"
@@ -184,7 +184,7 @@
 
     <LinearLayout
         android:id="@+id/menu"
-        android:background="@color/backgroundtxt"
+        android:background="@color/backgroundBotones"
         android:layout_width="match_parent"
         android:layout_weight="0.12"
         android:layout_height="0dp"

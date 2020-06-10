@@ -58,7 +58,7 @@
 
     <LinearLayout
         android:id="@+id/menu"
-        android:background="@color/backgroundtxt"
+        android:background="@color/backgroundBotones"
         android:layout_width="match_parent"
         android:layout_weight="0.12"
         android:layout_height="0dp"

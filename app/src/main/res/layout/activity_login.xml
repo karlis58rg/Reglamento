@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icn_logo_login"
-        android:background="@color/backgroundLogoAzul"/>
+        android:background="@color/backgroundLogoCafe"/>
 
     <EditText
         android:id="@+id/txtUser"
