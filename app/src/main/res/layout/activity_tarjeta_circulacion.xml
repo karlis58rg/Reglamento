@@ -98,7 +98,6 @@
                 </LinearLayout>
                 <!--IMAGEN2 TITLE-->
                 <LinearLayout
-                    android:id="@+id/imgQrTarjetaCirculacion"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -107,6 +106,7 @@
                     android:background="@drawable/drawable_pressed"
                     android:layout_weight="0.12">
                     <ImageView
+                        android:id="@+id/imgQrTarjetaCirculacion"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:src="@drawable/icn_qr"/>
@@ -164,7 +164,6 @@
                         </LinearLayout>
                         <!--IMG BUSCAR REGISTRO 1-->
                         <LinearLayout
-                            android:id="@+id/imgBuscar"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="0.03"
@@ -173,6 +172,7 @@
                             android:orientation="vertical"
                             android:weightSum="1">
                             <ImageView
+                                android:id="@+id/imgBuscarNoTarjeta"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:src="@drawable/icn_buscar" />
@@ -896,11 +896,12 @@
                             android:weightSum="1"
                             android:background="@drawable/drawable_pressed"
                             android:layout_weight="0.20">
+
                             <EditText
                                 android:id="@+id/txtMarca"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"/>
+                                android:gravity="center" />
                         </LinearLayout>
                         <!--IMG BUSCAR REGISTRO 13-->
                         <LinearLayout
@@ -1245,7 +1246,6 @@
                         </LinearLayout>
                         <!--BOTTON FOODER-->
                         <LinearLayout
-                            android:id="@+id/lblGuardar"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
@@ -1254,6 +1254,7 @@
                             android:background="@drawable/drawable_pressed"
                             android:layout_weight="0.25">
                             <Button
+                                android:id="@+id/btnGuardarTC"
                                 android:layout_width="wrap_content"
                                 android:layout_height="0dp"
                                 android:layout_weight="0.4"
@@ -1305,7 +1306,7 @@
                             android:background="@drawable/drawable_pressed"
                             android:layout_weight="0.20">
                             <TextView
-                                android:id="@+id/linkQr"
+                                android:id="@+id/linkQrTC"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"

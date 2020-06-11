@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#621132</color>
-    <color name="colorPrimaryDark">#621132 </color>
+    <color name="colorPrimary">#5B0422</color>
+    <color name="colorPrimaryDark">#5B0422 </color>
     <color name="colorAccent">#0063f2</color>
 
     <!--ESTILOS EN BLANCO Y AZUL -->
     <color name="background">#FFFFFF</color>
-    <color name="backgroundLogoCafe">#621132</color>
-    <color name="backgroundBotones">#B38E5d</color>
+    <color name="backgroundLogoCafe">#5B0422</color>
+    <color name="backgroundBotones">#BC955C</color>
     <color name="backgroundtxt">#003147</color>
     <color name="hint">#001C44</color>
     <color name="pagarInfraccion">#FFBC00</color>

@@ -17,90 +17,107 @@
         app:srcCompat="@drawable/icn_logo_login"
         android:background="@color/backgroundLogoCafe"/>
 
-    <TextView
-        android:id="@+id/lblSaludo"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hola"
-        android:textStyle="bold"
-        android:textColor="@color/hint"
-        android:layout_marginTop="70dp"
-        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgLogoLoginUser" />
+        app:layout_constraintTop_toBottomOf="@+id/imgLogoLoginUser">
 
-    <TextView
-        android:id="@+id/lblUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Karla Adriana"
-        android:textSize="23sp"
-        android:textColor="@color/hint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblSaludo" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="600dp">
 
-    <TextView
-        android:id="@+id/lblCambiarUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cambiar de usuario"
-        android:textSize="16sp"
-        android:textColor="@color/hint"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblUsuario" />
+                <TextView
+                    android:id="@+id/lblSaludo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hola"
+                    android:textColor="@color/hint"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="70dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/Pass"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        app:passwordToggleEnabled="true"
-        app:passwordToggleTint="@color/backgroundtxt"
-        android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblCambiarUsuario">
-    <EditText
-        android:id="@+id/txtPassUser"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:maxLength="8"
-        android:digits="abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ 1234567890"
-        android:inputType="textPassword"
-        android:textAllCaps="true"
-        android:hint="Contraseña"
-        android:textColor="@color/hint"/>
-    </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:id="@+id/lblUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Karla Adriana"
+                    android:textSize="23sp"
+                    android:textColor="@color/hint"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblSaludo" />
 
-    <TextView
-        android:id="@+id/lblPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Olvidé mi contraseña"
-        android:textColor="@color/hint"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Pass" />
+                <TextView
+                    android:id="@+id/lblCambiarUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cambiar de usuario"
+                    android:textSize="16sp"
+                    android:textColor="@color/hint"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblUsuario" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Pass"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/backgroundtxt"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblCambiarUsuario">
+                    <EditText
+                        android:id="@+id/txtPassUser"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:maxLength="8"
+                        android:digits="abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ 1234567890"
+                        android:inputType="textPassword"
+                        android:textAllCaps="true"
+                        android:hint="Contraseña"
+                        android:textColor="@color/hint"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/lblPass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Olvidé mi contraseña"
+                    android:textColor="@color/hint"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Pass" />
 
 
 
-    <Button
-        android:id="@+id/btnEntrar"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Entrar"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblPass"
-        android:background="@drawable/boton_redondo"
-        android:textColor="@color/background"/>
+                <Button
+                    android:id="@+id/btnEntrar"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:text="Entrar"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblPass"
+                    android:background="@drawable/boton_redondo"
+                    android:textColor="@color/background"/>
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
