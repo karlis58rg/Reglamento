@@ -36,9 +36,9 @@ import okhttp3.Response;
 
 public class TarjetaCirculacion extends AppCompatActivity{
 
-    ImageView btnQrScan,btnLicencia,btnBuscarTarjeta;
+    ImageView btnQrScan,btnLicencia,btnBuscarTarjeta,btnBuscarNoSerie,btnBuscarNoPlaca;
     TextView lblResultScaner;
-    String ResultQR,origen,observaciones,resOrigen,resObservaciones,respuestaJson;
+    String ResultQR,servicio,origen,observaciones,resOrigen,resObservaciones,resServicio,respuestaJson;
     String Tag = "TarjetaCirculación";
     EditText txtNoTarjetaTC,txtNoSerieTC,txtNoPlacaTC;
     EditText txtNombreTC,txtApaternoTC,txtAmaternoTC,txtNombreR,txtApaternoR,txtAmaternoR;
@@ -58,6 +58,8 @@ public class TarjetaCirculacion extends AppCompatActivity{
         setContentView(R.layout.activity_tarjeta_circulacion);
 
         btnBuscarTarjeta = findViewById(R.id.imgBuscarNoTarjeta);
+        btnBuscarNoSerie = findViewById(R.id.imgBuscarNoTarjeta);
+        btnBuscarNoPlaca = findViewById(R.id.imgBuscarNoTarjeta);
         btnQrScan = findViewById(R.id.imgQrTarjetaCirculacion);
         lblResultScaner = findViewById(R.id.linkQrTC);
         btnLicencia = findViewById(R.id.imgLicenciaTC);
@@ -179,6 +181,8 @@ public class TarjetaCirculacion extends AppCompatActivity{
                                     municipio = jObj.getString("Municipio");
                                     localidad = jObj.getString("Localidad");
                                     resOrigen = jObj.getString("Origen");
+                                    resServicio = jObj.getString("TipoServicio");
+                                    resObservaciones = jObj.getString("Observaciones");
                                     txtNoSerieTC.setText(noSerieTC);
                                     txtNoPlacaTC.setText(noPlacaTC);
                                     txtNombreTC.setText(nombreTC);
@@ -194,9 +198,8 @@ public class TarjetaCirculacion extends AppCompatActivity{
                                     txtColor.setText(color);
                                     txtMunicipio.setText(municipio);
                                     txtLocalidad.setText(localidad);
-                                    System.out.println(resOrigen);
-                                    //System.out.println(resObservaciones);
                                     origen = "Nacional";
+                                    servicio = "Privado";
                                     observaciones = "null";
                                     if(resOrigen.equals(origen)){
                                         rNacional = (RadioButton)radioNacionalidadTC.getChildAt(0);
@@ -205,14 +208,116 @@ public class TarjetaCirculacion extends AppCompatActivity{
                                         rExtranjero = (RadioButton)radioNacionalidadTC.getChildAt(1);
                                         rExtranjero.setChecked(true);
                                     }
-                                   /* if(resObservaciones.equals(observaciones)){
+                                    /*if(resServicio.equals(servicio)){
+                                        spinTipoServicio.setSelection(((ArrayAdapter<String>)spinTipoServicio.getAdapter()).getPosition("Privado"));
+                                    }else{
+                                        spinTipoServicio.setSelection(((ArrayAdapter<String>)spinTipoServicio.getAdapter()).getPosition("Publico"));
+                                    }*/
+                                    if(resObservaciones.equals(observaciones)){
                                         txtObservaciones.setText("SIN OBSERVACIONES");
                                     }else{
                                         resObservaciones = jObj.getString("Observaciones");
                                         txtObservaciones.setText(resObservaciones);
-                                    }*/
+                                    }
                                     Log.i("HERE", ""+jObj);
+                                }
 
+                            }catch(JSONException e){
+                                e.printStackTrace();
+                            }
+
+                        }
+                    });
+                }
+            }
+
+        });
+    }
+
+    public void getNoSerie() {
+        noSerieTC = txtNoSerieTC.getText().toString();
+        final OkHttpClient client = new OkHttpClient();
+        final Request request = new Request.Builder()
+                .url("http://187.174.102.142/AppTransito/api/TarjetaCirculacion?noSerie="+noSerieTC)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+                Looper.prepare();
+                Toast.makeText(getApplicationContext(),"ERROR AL OBTENER LA INFORMACIÓN, POR FAVOR VERIFIQUE SU CONEXIÓN A INTERNET",Toast.LENGTH_SHORT).show();
+                Looper.loop();
+            }
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    final String myResponse = response.body().string();
+                    TarjetaCirculacion.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                respuestaJson = "null";
+                                if(myResponse.equals(respuestaJson)){
+                                    Toast.makeText(getApplicationContext(),"NO SE CUENTA CON INFORMACIÓN",Toast.LENGTH_SHORT).show();
+                                }else{
+                                    JSONObject jObj = null;
+                                    jObj = new JSONObject(""+myResponse+"");
+                                    noTarjetaTC = jObj.getString("NoTarjeta");
+                                    noPlacaTC = jObj.getString("Placa");
+                                    nombreTC = jObj.getString("NombreP");
+                                    aPaternoTC = jObj.getString("ApellidoPP");
+                                    aMaternoTC = jObj.getString("ApellidoMP");
+                                    nombreR = jObj.getString("NombreU");
+                                    aPaternoR = jObj.getString("ApellidoPU");
+                                    aMaternoR = jObj.getString("ApellidoMU");
+                                    noMotorTC = jObj.getString("NoMotor");
+                                    marca = jObj.getString("Marca");
+                                    subMarca = jObj.getString("SubMarca");
+                                    modelo = jObj.getString("Modelo");
+                                    color = jObj.getString("Color");
+                                    municipio = jObj.getString("Municipio");
+                                    localidad = jObj.getString("Localidad");
+                                    resOrigen = jObj.getString("Origen");
+                                    resServicio = jObj.getString("TipoServicio");
+                                    resObservaciones = jObj.getString("Observaciones");
+                                    txtNoTarjetaTC.setText(noTarjetaTC);
+                                    txtNoPlacaTC.setText(noPlacaTC);
+                                    txtNombreTC.setText(nombreTC);
+                                    txtApaternoTC.setText(aPaternoTC);
+                                    txtAmaternoTC.setText(aMaternoTC);
+                                    txtNombreR.setText(nombreR);
+                                    txtApaternoR.setText(aPaternoR);
+                                    txtAmaternoR.setText(aMaternoR);
+                                    txtNoMotorTC.setText(noMotorTC);
+                                    txtMarca.setText(marca);
+                                    txtSubmarca.setText(subMarca);
+                                    txtModelo.setText(modelo);
+                                    txtColor.setText(color);
+                                    txtMunicipio.setText(municipio);
+                                    txtLocalidad.setText(localidad);
+                                    origen = "Nacional";
+                                    servicio = "Privado";
+                                    observaciones = "null";
+                                    if(resOrigen.equals(origen)){
+                                        rNacional = (RadioButton)radioNacionalidadTC.getChildAt(0);
+                                        rNacional.setChecked(true);
+                                    }else {
+                                        rExtranjero = (RadioButton)radioNacionalidadTC.getChildAt(1);
+                                        rExtranjero.setChecked(true);
+                                    }
+                                    /*if(resServicio.equals(servicio)){
+                                        spinTipoServicio.setSelection(((ArrayAdapter<String>)spinTipoServicio.getAdapter()).getPosition("Privado"));
+                                    }else{
+                                        spinTipoServicio.setSelection(((ArrayAdapter<String>)spinTipoServicio.getAdapter()).getPosition("Publico"));
+                                    }*/
+                                    if(resObservaciones.equals(observaciones)){
+                                        txtObservaciones.setText("SIN OBSERVACIONES");
+                                    }else{
+                                        resObservaciones = jObj.getString("Observaciones");
+                                        txtObservaciones.setText(resObservaciones);
+                                    }
+                                    Log.i("HERE", ""+jObj);
                                 }
 
                             }catch(JSONException e){

@@ -219,7 +219,6 @@
                         </LinearLayout>
                         <!--IMG BUSCAR REGISTRO 2-->
                         <LinearLayout
-                            android:id="@+id/imgBuscar2"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="0.03"
@@ -228,6 +227,7 @@
                             android:orientation="vertical"
                             android:weightSum="1">
                             <ImageView
+                                android:id="@+id/imgNoserie"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:src="@drawable/icn_buscar" />
