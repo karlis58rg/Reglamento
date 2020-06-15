@@ -163,8 +163,8 @@ public class LicenciaConducir extends AppCompatActivity {
         btnGuardarL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(txtLicencia.getText().toString().isEmpty()){
-                    Toast.makeText(getApplicationContext(),"EL NÚMERO DE LICENCIA ES NECESARIO",Toast.LENGTH_SHORT).show();
+                if(txtObservaciones.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(),"DEBE AGREGAR ALGÚN COMENTARIO",Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(getApplicationContext(),"UN MOMENTO POR FAVOR",Toast.LENGTH_SHORT).show();
                     insertRegistroLicencia();

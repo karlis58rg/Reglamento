@@ -54,7 +54,6 @@ public class TarjetaCirculacion extends AppCompatActivity{
     RadioButton rNacional,rExtranjero;
     Button  btnGuardarTC;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,6 +124,18 @@ public class TarjetaCirculacion extends AppCompatActivity{
             }
         });
 
+        btnBuscarTarjeta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(txtObservaciones.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(),"DEBE AGREGAR ALGÚN COMENTARIO",Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(getApplicationContext(),"UN MOMENTO POR FAVOR",Toast.LENGTH_SHORT).show();
+                    insertRegistroTarjeta();
+                }
+            }
+        });
+
 
         btnQrScan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,7 +164,6 @@ public class TarjetaCirculacion extends AppCompatActivity{
             }
         });
     }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
