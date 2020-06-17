@@ -95,10 +95,7 @@
                     android:id="@+id/txtBuscador"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="50dp"
                     android:hint="Buscar"
-                    android:gravity="center"
                     android:textColorHint="@color/hint"
                     android:textSize="19sp" />
 

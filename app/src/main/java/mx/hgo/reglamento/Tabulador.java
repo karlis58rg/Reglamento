@@ -45,23 +45,18 @@ public class Tabulador extends AppCompatActivity {
         btnBuscar = findViewById(R.id.imgLupa);
         txtBuscar = findViewById(R.id.txtBuscador);
 
-
         btnBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getTabulador();
-
-
             }
         });
     }
 
-
-
-
     public void getTabulador() {
         buscador = txtBuscar.getText().toString();
         buscador = buscador.trim();
+
         final OkHttpClient client = new OkHttpClient();
         final Request request = new Request.Builder()
                 .url("http://187.174.102.142/AppTransito/api/Tabulador?varDesc="+buscador)
@@ -90,7 +85,6 @@ public class Tabulador extends AppCompatActivity {
                                     JSONArray ja = null;
                                     ja = new JSONArray("" + myResponse + "");
 
-
                                     Log.i("sizejson", "" + ja);
                                     CargarListaView(ja);
                                 }
@@ -98,38 +92,28 @@ public class Tabulador extends AppCompatActivity {
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
-
-
                         }
                     });
                 }
             }
 
         });
-
-
     }
+
     public void CargarListaView(JSONArray ja){
         ArrayList<String> lista=new ArrayList<>();
 
-        for(int i=0;i<ja.length();i+=5){
+        for(int i=0;i< ja.length();i++){
 
             try{
-                lista.add(ja.getString(i)+" "+ja.getString(i+1 )+ " "+ja.getString(i+2)+" "+ja.getString(i+3)+" "+ja.getString(i+4));
-
-
+                lista.add(ja.getString(i));
             }catch(JSONException e) {
                 e.printStackTrace();
-
             }
-
-
-
         }
-        
+
         ArrayAdapter<String> adaptador=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,lista);
         listado.setAdapter(adaptador);
-        txtBuscar.setText("");
     }
 
 
