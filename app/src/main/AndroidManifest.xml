@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Tabulador"></activity>
+        <activity android:name=".TabuladorListas"></activity>
         <activity android:name=".Listas" />
         <activity
             android:name=".TarjetasConductor"

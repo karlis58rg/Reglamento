@@ -17,8 +17,6 @@ import androidx.lifecycle.ViewModelProviders;
 import mx.hgo.reglamento.Contactos;
 import mx.hgo.reglamento.LugaresDePago;
 import mx.hgo.reglamento.R;
-import mx.hgo.reglamento.Tabulador;
-import mx.hgo.reglamento.TarjetaCirculacion;
 import mx.hgo.reglamento.TarjetasConductor;
 import mx.hgo.reglamento.ViewPDFController;
 

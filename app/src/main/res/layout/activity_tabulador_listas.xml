@@ -6,145 +6,136 @@
     android:layout_height="match_parent"
     android:weightSum="1"
     android:orientation="vertical"
-    tools:context=".Tabulador">
+    tools:context=".Tabulador"
 
-    <androidx.drawerlayout.widget.DrawerLayout
-        android:id="@+id/drawer_layout"
+
+    >
+
+
+    <LinearLayout
+        android:id="@+id/content"
         android:background="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.88">
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:orientation="vertical">
+
         <LinearLayout
-            android:id="@+id/content"
-            android:background="@android:color/white"
+            android:id="@+id/lySearch"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:weightSum="1"
-            android:orientation="vertical">
+            android:layout_height="20dp"
+            android:layout_weight="0.08"
+            android:background="@color/backgroundLogoCafe"
+            android:orientation="horizontal"
+            android:weightSum="1">
 
             <LinearLayout
-                android:id="@+id/lySearch"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_weight="0.08"
-                android:background="@color/backgroundLogoCafe"
-                android:orientation="horizontal"
-                android:weightSum="1">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.15"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:id="@+id/btnList"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:src="@drawable/icn_list_white" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.75"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/imgLogoContacto"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:src="@drawable/icn_logo_login" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/contentWebView"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.18">
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.15"
+                android:gravity="center">
 
                 <ImageView
-                    android:id="@+id/imgBusqueda"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_gravity="center_vertical"
-                    app:srcCompat="@drawable/icn_tabulador" />
-
-                <TextView
-                    android:id="@+id/lblBusqueda"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="50dp"
-                    android:textColor="@color/hint"
-                    android:text="Tabulador"
-                    android:textSize="25sp" />
-
+                    android:id="@+id/btnList"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/icn_list_white" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_weight="0.09">
-
-                <EditText
-                    android:id="@+id/txtBuscador"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:hint="Buscar"
-                    android:textColorHint="@color/hint"
-                    android:textSize="19sp" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.75"
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imgLupa"
-                    android:layout_width="30dp"
-                    android:layout_height="25dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="0.5dp"
-                    app:srcCompat="@drawable/icn_lupa" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="210dp"
-                android:layout_weight="0.25">
-
-                <ListView
-                    android:id="@+id/Lista"
+                    android:id="@+id/imgLogoContacto"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
+                    android:layout_height="48dp"
+                    android:src="@drawable/icn_logo_login" />
             </LinearLayout>
+        </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/contentWebView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.18">
 
+            <ImageView
+                android:id="@+id/imgBusqueda"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="40dp"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/icn_tabulador" />
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/lblBusqueda"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_weight="0.25">
-                <TextView
-                    android:id="@+id/lblinformacion"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:textAlignment="center"
-                    android:textColor="@color/hint"
-                    android:text="Lorem ipusom....."
-                    android:textStyle="normal"
-                    android:textSize="25sp" />
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:layout_marginLeft="50dp"
+                android:textColor="@color/hint"
+                android:text="Tabulador"
+                android:textSize="25sp" />
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_weight="0.09">
 
-    </androidx.drawerlayout.widget.DrawerLayout>
+            <EditText
+                android:id="@+id/txtBuscador"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="Buscar"
+                android:textColorHint="@color/hint"
+                android:textSize="19sp" />
 
+            <ImageView
+                android:id="@+id/imgLupa"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="0.5dp"
+                app:srcCompat="@drawable/icn_lupa" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_weight="0.25">
+
+            <ListView
+                android:id="@+id/Lista"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="0.25">
+            <TextView
+                android:id="@+id/lblinformacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/hint"
+                android:text="Lorem ipusom....."
+                android:textStyle="normal"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/menu"
         android:background="@color/backgroundBotones"
